@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.crud.covid.model.User;
 import com.crud.covid.model.Role;
+import com.crud.covid.model.AuthUserDetails;
 import com.crud.covid.repository.UserRepository;
 import com.crud.covid.web.dto.UserRegistrationDto;
 
@@ -43,11 +44,6 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UsernameNotFoundException("Invalid email or password.");
         }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
-                mapRolesToAuthorities(user.getRoles()));
-    }
-
-    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        return new AuthUserDetails(user);
     }
 }

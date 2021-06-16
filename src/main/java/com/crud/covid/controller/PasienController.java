@@ -12,10 +12,8 @@ public class PasienController {
     private PasienService pasienService;
 
     @GetMapping("/")
-    public String viewHomePage(Model model){
-        model.addAttribute("ListPasien", pasienService.getAllPasien());
+    public String IndexView(Model model){
+        model.addAttribute("title", "Home");
         return "index";
-    }
-
-    
+    }    
 }
