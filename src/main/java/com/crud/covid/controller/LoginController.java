@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LoginController {
+    @GetMapping("/")
+    public String IndexView(Model model){
+        model.addAttribute("title", "Home");
+        return "index";
+    }
+
     @GetMapping("/login")
     public String login(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

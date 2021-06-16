@@ -10,10 +10,4 @@ import com.crud.covid.service.PasienService;
 public class PasienController {
     @Autowired
     private PasienService pasienService;
-
-    @GetMapping("/")
-    public String IndexView(Model model){
-        model.addAttribute("title", "Home");
-        return "index";
-    }    
 }
