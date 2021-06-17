@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
     @GetMapping("/")
-    public String IndexView(Model model){
+    public String viewIndex(Model model){
         model.addAttribute("title", "Home");
         return "index";
     }
@@ -21,6 +21,7 @@ public class LoginController {
         if (auth.getPrincipal() instanceof UserDetails) {
             return "redirect:/";
         }
+        model.addAttribute("title", "Login");
         return "login";
     }
 }

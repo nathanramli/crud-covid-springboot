@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="partial/_header">
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:insert="partial/_sidebar"></div>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_navbar.html -->
+            <div th:insert="partial/_navbar"></div>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper pb-0">
+                    <div class="page-header flex-wrap">
+                        <div class="header-left">
+                            <b>Data Pasien</b>
+                        </div>
+                        <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
+                            <a th:href="@{/pasien/form}" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text">
+                                <i class="mdi mdi-plus-circle"></i> Tambah Pasien</a>
+                        </div>
+                    </div>
+                    <!-- first row starts here -->
+                    <div class="row">
+                        <div class="col-xl-12 stretch-card grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table table-hover my-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="d-none d-xl-table-cell">NIK</th>
+                                                <th class="d-none d-xl-table-cell">Nama</th>
+                                                <th class="d-none d-md-table-cell">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="item:${data}">
+                                                <td th:text="${item.nik}"></td>
+                                                <td th:text="${item.nama}"></td>
+                                                <td>
+                                                    <a th:href="@{/pasien/form/{id}(id = ${item.id})}"
+                                                        class="btn btn-sm btn-primary ml-1">Edit</a>
+                                                    <a th:href="@{/pasien/delete/{id}(id = ${item.id})}"
+                                                        onclick="return confirm('Yakin ingin menghapus data ini ?');"
+                                                        class="btn btn-sm btn-danger ml-1">Delete</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <div th:insert="partial/_footer"></div>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <div th:insert="partial/_js"></div>
+</body>
+
+</html>

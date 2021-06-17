@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.lang.ProcessBuilder.Redirect;
-
 import com.crud.covid.service.UserService;
 import com.crud.covid.web.dto.UserRegistrationDto;
 

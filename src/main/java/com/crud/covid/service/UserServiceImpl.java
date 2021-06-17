@@ -1,8 +1,6 @@
 package com.crud.covid.service;
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.stream.Collectors;
 
 import com.crud.covid.model.User;
 import com.crud.covid.model.Role;
@@ -11,8 +9,6 @@ import com.crud.covid.repository.UserRepository;
 import com.crud.covid.web.dto.UserRegistrationDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

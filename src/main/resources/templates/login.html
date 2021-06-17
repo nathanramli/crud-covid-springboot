@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Login &bull; Pendataan COVID-19</title>
-    <link rel="stylesheet" th:href="@{/vendor/mdi/css/materialdesignicons.min.css}">
-    <link rel="stylesheet" th:href="@{/vendor/css/vendor.bundle.base.css}">
-    <link rel="stylesheet" th:href="@{/vendor/font-awesome/css/font-awesome.min.css}" />
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <link rel="shortcut icon" href="/images/favicon.png" />
+<head th:replace="partial/_header">
 </head>
 
 <body>
@@ -67,8 +58,8 @@
         <div class="col-4">
         </div>
     </div>
-    <script th:src="@{/vendor/js/vendor.bundle.base.js}"></script>
-    <script th:src="@{/js/misc.js}"></script>
+    <!-- container-scroller -->
+    <div th:insert="partial/_js"></div>
 </body>
 
 </html>

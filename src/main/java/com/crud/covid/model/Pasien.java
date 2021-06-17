@@ -19,4 +19,28 @@ public class Pasien {
     public String nik;
     @Column(name = "nama")
     public String nama;
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setNik(String nik) {
+        this.nik = nik;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public String getNik() {
+        return this.nik;
+    }
+
+    public String getNama() {
+        return this.nama;
+    }
 }
