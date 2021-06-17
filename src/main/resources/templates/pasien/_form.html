@@ -31,16 +31,43 @@
                                         <div class="form-group row">
                                             <label for="nik" class="col-sm-3 col-form-label">NIK Pasien</label>
                                             <div class="col-sm-9">
-                                                <input type="text" th:field="*{nik}" name="nik" class="form-control" id="nik" placeholder="NIK Pasien" />
+                                                <input type="text" th:field="*{nik}" name="nik" class="form-control"
+                                                    id="nik" placeholder="NIK Pasien" />
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="nama" class="col-sm-3 col-form-label">Nama Pasien</label>
                                             <div class="col-sm-9">
-                                                <input type="text" th:field="*{nama}" name="nama" class="form-control" id="nama" placeholder="Nama Pasien" />
+                                                <input type="text" th:field="*{nama}" name="nama" class="form-control"
+                                                    id="nama" placeholder="Nama Pasien" />
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mt-1"><span class="mdi mdi-content-save"></span> Save</button>
+                                        <div class="form-group row">
+                                            <label for="jenisKelamin" class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{jenisKelamin}" name="jenisKelamin" class="form-control"
+                                                    id="jenisKelamin">
+                                                    <option value="-">-</option>
+                                                    <option value="Laki-Laki">Laki-Laki</option>
+                                                    <option value="Perempuan">Perempuan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tanggalLahir" class="col-sm-3 col-form-label">Tanggal Lahir (dd/mm/yyyy)</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" th:field="*{tanggalLahir}" name="tanggalLahir" class="form-control"
+                                                    id="tanggalLahir" placeholder="Tanggal Lahir Pasien (dd/mm/yyyy)" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+                                            <div class="col-sm-9">
+                                                <textarea th:field="*{alamat}" name="alamat" class="form-control col-sm-9" id="alamat" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-1"><span
+                                                class="mdi mdi-content-save"></span> Save</button>
                                     </form>
                                 </div>
                             </div>
