@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="partial/_header">
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:insert="partial/_sidebar"></div>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_navbar.html -->
+            <div th:insert="partial/_navbar"></div>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper pb-0">
+                    <div class="page-header flex-wrap">
+                        <div class="header-left">
+                            <b th:text="${title}"></b>
+                        </div>
+                    </div>
+                    <!-- first row starts here -->
+                    <div class="row">
+                        <div class="col-xl-12 stretch-card grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form th:action="@{{action}(action = ${action})}" th:object="${form}" method="POST">
+                                        <input type="hidden" th:field="*{id}">
+                                        <div class="form-group row">
+                                            <label for="nik" class="col-sm-3 col-form-label">NIK Pasien</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" th:field="*{nik}" name="nik" class="form-control"
+                                                    id="nik" placeholder="NIK Pasien" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="nama" class="col-sm-3 col-form-label">Nama Pasien</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" th:field="*{nama}" name="nama" class="form-control"
+                                                    id="nama" placeholder="Nama Pasien" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="noRm" class="col-sm-3 col-form-label">No. RM</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" th:field="*{noRm}" name="noRm" class="form-control"
+                                                    id="noRm" placeholder="No. RM" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tanggal" class="col-sm-3 col-form-label">Tanggal Berkunjung (dd/mm/yyyy)</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" th:field="*{tanggal}" name="tanggal" class="form-control"
+                                                    id="tanggal" placeholder="Tanggal Berkunjung (dd/mm/yyyy)" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="sesakNafas" class="col-sm-3 col-form-label">Sesak Nafas</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{sesakNafas}" name="sesakNafas" class="form-control"
+                                                    id="sesakNafas">
+                                                    <option value="Tidak">Tidak</option>
+                                                    <option value="Ya">Ya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="anosmia" class="col-sm-3 col-form-label">Anosmia</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{anosmia}" name="anosmia" class="form-control"
+                                                    id="anosmia">
+                                                    <option value="Tidak">Tidak</option>
+                                                    <option value="Ya">Ya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="batuk" class="col-sm-3 col-form-label">Batuk</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{batuk}" name="batuk" class="form-control"
+                                                    id="batuk">
+                                                    <option value="Tidak">Tidak</option>
+                                                    <option value="Ya">Ya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="demam" class="col-sm-3 col-form-label">Demam</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{demam}" name="demam" class="form-control"
+                                                    id="demam">
+                                                    <option value="Tidak">Tidak</option>
+                                                    <option value="Ya">Ya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="flu" class="col-sm-3 col-form-label">Flu</label>
+                                            <div class="col-sm-9">
+                                                <select th:field="*{flu}" name="flu" class="form-control"
+                                                    id="flu">
+                                                    <option value="Tidak">Tidak</option>
+                                                    <option value="Ya">Ya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-1"><span
+                                                class="mdi mdi-content-save"></span> Save</button>
+                                        <a class="btn" th:href="@{/anamnesa}"><span class="mdi mdi-arrow-left-bold"></span> Kembali</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <div th:insert="partial/_footer"></div>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <div th:insert="partial/_js"></div>
+</body>
+
+</html>
