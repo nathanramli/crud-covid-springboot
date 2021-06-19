@@ -33,6 +33,23 @@
                     <h4 class="card-title">Registration</h4>
                     <p class="card-description">Silahkan registrasi untuk membuat akun</p>
 
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> Terdapat kesalahan saat mendaftar.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div th:if="${param.success}">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Berhasil!</strong> Anda berhasil membuat akun.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+
                     <form th:action="@{/registration}" th:object="${user}" method="POST">
                         <div class="form-group row">
                             <label for="email" class="col-sm-3 col-form-label">Email</label>
