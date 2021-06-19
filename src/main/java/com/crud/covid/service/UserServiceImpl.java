@@ -35,6 +35,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public long countAllUser(){
+        return this.userRepository.count();
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email);
         if (user == null) {

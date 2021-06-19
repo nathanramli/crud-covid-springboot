@@ -16,7 +16,7 @@ public class PasienController {
     private PasienService pasienService;
 
     @GetMapping("/pasien")
-    public String viewPasienIndex(Model model)
+    public String viewIndex(Model model)
     {
         model.addAttribute("title", "Data Pasien");
         model.addAttribute("data", pasienService.getAllPasien());
@@ -24,7 +24,7 @@ public class PasienController {
     }
 
     @GetMapping(value = {"/pasien/form/{id}", "/pasien/form"})
-    public String formPasien(@PathVariable(value = "id", required = false) String id, Model model)
+    public String viewForm(@PathVariable(value = "id", required = false) String id, Model model)
     {
         Pasien form;
         if(id != null){
@@ -40,14 +40,14 @@ public class PasienController {
     }
 
     @PostMapping("/pasien/save")
-    public String savePasien(Pasien pasien)
+    public String save(Pasien pasien)
     {
         pasienService.savePasien(pasien);
         return "redirect:/pasien";
     }
 
     @GetMapping("/pasien/delete/{id}")
-    public String deleteMenu(@PathVariable("id") long id, Model model)
+    public String delete(@PathVariable("id") long id, Model model)
     {
         pasienService.deletePasienById(id);
         return "redirect:/pasien";

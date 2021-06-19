@@ -31,9 +31,14 @@ public class PasienServiceImpl implements PasienService {
         if(optional.isPresent()){
             pasien = optional.get();
         } else {
-            throw new RuntimeException("Mahasiswa tidak ditemukan dengan id : " + id + "");
+            throw new RuntimeException("Pasien tidak ditemukan dengan id : " + id);
         }
         return pasien;
+    }
+
+    @Override
+    public long countAllPasien(){
+        return pasienRepository.count();
     }
 
     @Override

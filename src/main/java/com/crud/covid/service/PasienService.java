@@ -6,6 +6,7 @@ import com.crud.covid.model.Pasien;
 
 public interface PasienService {
     List<Pasien> getAllPasien();
+    long countAllPasien();
     void savePasien(Pasien pasien);
     Pasien getPasienById(long id);
     void deletePasienById(long id);
