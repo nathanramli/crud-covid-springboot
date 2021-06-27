@@ -1,3 +1,2 @@
-# Spring Boot Java
-CRUD Java Spring Boot for Assignment
-
+## Spring CRUD for Assigment
+Spring CRUD for Assigment
