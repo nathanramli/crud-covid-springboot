@@ -30,3 +30,6 @@ static/* linguist-vendored
 *.so            binary
 *.war           binary
 *.jks           binary
+
+# Basically the html files here is work with thymeleaf (java libraries)
+*.html linguist-language=java
