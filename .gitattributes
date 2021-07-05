@@ -1,5 +1,5 @@
 # Linguist vendor
-static/* linguist-vendored
+src/main/resources/static* linguist-vendored
 
 # Java sources
 *.java          text diff=java
