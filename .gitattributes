@@ -1,13 +1,9 @@
-# Linguist vendor
-src/main/resources/static/* linguist-vendored
-
 # Java sources
 *.java          text diff=java
 *.gradle        text diff=java
 *.gradle.kts    text diff=java
 
 # These files are text and should be normalized (Convert crlf => lf)
-*.css           text diff=css
 *.df            text
 *.htm           text diff=html
 *.html          text diff=html
@@ -33,3 +29,6 @@ src/main/resources/static/* linguist-vendored
 
 # Basically the html files here is work with thymeleaf (java libraries)
 *.html linguist-language=java
+
+# Linguist vendor
+src/main/resources/static/* linguist-vendored
