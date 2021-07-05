@@ -31,4 +31,4 @@
 *.html linguist-language=java
 
 # Linguist vendor
-src/main/resources/static/* linguist-vendored
+*.css linguist-vendored
